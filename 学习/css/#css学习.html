@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #one {
+      border: 0;
+      padding: 0.5em 1.5em;
+      font-size: 2rem;
+      background-image: linear-gradient(45deg, to right, red, blue); /* 向右红蓝线性渐变 */
+      background-image: linear-gradient(45deg, red, blue) /* 45度红蓝向右线性渐变 */
+    }
+    @keyframes move {
+      0% {
+        left: 0;
+        scale: 1;
+      }
+      50% {
+        transform: translateX(500px);
+        scale: 1.5;
+      }
+      100% {
+        transform: translateX(100%);
+        scale: 2;
+        transform: rotate(180deg) translate(50%, 50%) scale(1.5, 2);
+      }
+
+    }
+
+
+    .trans {
+      margin-left: 300px;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      transition: transform 2s;
+      }
+
+    .trans:hover {
+      transform: rotate(180deg) translate(50%, 50%) scale(1.5, 2);
+    }
+    .move {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      position: relative;
+      animation: move 2s ease infinite;
+    }
+  </style>
+</head>
+<body>
+  <p id="one">
+      hello world
+  </p>
+  <div class="trans">旋转</div>
+  <div class="move">动画</div>
+</body>
+</html>
