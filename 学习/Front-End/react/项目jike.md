@@ -19,6 +19,8 @@ json-server[模拟接口] ：server/db.json
 react-router-dom[路由] : router
 @reduxjs/toolkit[状态管理] : store
 
+source-map-explorer[打包体积分析]
+
 
 ## 0.2 配置@别名路径
 ```js
@@ -38,10 +40,11 @@ react-router-dom[路由] : router
 // 2. 修改package.json
    {
    "scripts": {
-      "start": "craco start",
-      "build": "craco build",
-      "test": "craco test",
-      "eject": "react-scripts eject"
+      "start": "craco start",// 本地启动
+      "build": "craco build",// 本地打包
+      "test": "craco test",  // 本地测试
+      "eject": "react-scripts eject"，
+      "analyze": "source-map-explorer 'build/static/js/*.js'" // 打包体积分析
    }
    }
 
@@ -64,15 +67,29 @@ react-router-dom[路由] : router
 - "serve": "json-serve db.json --port 3004"
 - pnpm run serve
 
+## 0.4 项目打包优化
+   1. 项目打包： yarn build
+   2. 本地预览:  yarn global add serve
+                C:\Users\yangh\AppData\Local\Yarn\bin\serve -s build  
+                访问 http://localhost:3000
+   3. 路由懒加载
+   4. 打包体积分析： yarn analyze
+   5. 引入CDN： 配置craco.config.js
+               public/index.html增加CDN引入
 
-## 0.4 Hook钩子
+# 1. Hook钩子
 useDispatch[使用Redux中store的state]
 useSelector[使用Redux中store的异步方法]
-
+——————————————————————————————————————
 useLocation[获取Router的URL信息]
 useNavigate[跳转路由]
-
+——————————————————————————————————————
 useRef     [绑定DOM元素]
 useState   [数据与视图绑定]
+——————————————————————————————————————
 useEffect  [进行与函数主作用无关的操作]
             如axios, 修改DOM, 获取数据
+
+useReducer [处理组件的复杂状态逻辑]
+            多个状态间存在复杂的联系，且需要更新
+            useReducer 会比 useState 更便于管理状态
