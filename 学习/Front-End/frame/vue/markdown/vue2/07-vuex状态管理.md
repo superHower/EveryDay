@@ -1,30 +1,3 @@
-# vuex - 状态管理工具
-1. 状态就是数据
-2. vuex就是一个插件， 管理多组件共享的数据
-3. 应用： 购物车数据， 个人信息数据
-4. 场景：多个组件共同维护一份数据
-5. 优势： 数据集中化处理， 响应式变化
-
-## 0. 使用vuex
-1. 下载安装vuex:  npm run vuex@3
-2. 新建vuex模块文件： store文件下的index.js  专门存放vuex
-3. 创建仓库： 
-```
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex)  // 插件安装
-const store = new Vuex.Store({})// 创建仓库
-```
-4. main.js 导入挂载仓库
-```
-import store from './store/index'
-new Vue({
-  store,
-  render: (h) => h(App)
-}).$mount('#app')
-```
-
 
 ## 1. state
 ### 1.1. 作用： 提供唯一的公共组件数据源

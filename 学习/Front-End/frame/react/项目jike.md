@@ -67,15 +67,6 @@ source-map-explorer[打包体积分析]
 - "serve": "json-serve db.json --port 3004"
 - pnpm run serve
 
-## 0.4 项目打包优化
-   1. 项目打包： yarn build
-   2. 本地预览:  yarn global add serve
-                C:\Users\yangh\AppData\Local\Yarn\bin\serve -s build  
-                访问 http://localhost:3000
-   3. 路由懒加载
-   4. 打包体积分析： yarn analyze
-   5. 引入CDN： 配置craco.config.js
-               public/index.html增加CDN引入
 
 # 1. Hook钩子
 useDispatch[使用Redux中store的state]
