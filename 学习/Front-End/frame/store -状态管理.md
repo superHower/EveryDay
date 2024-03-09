@@ -107,7 +107,7 @@ Redux 改变数据的流程
   initialState: {} [状态] 
   reducers:     {} [修改状态的方法] 同步方法, 计算，修改新的 state
 
-## 3. 用 Thunk 编写异步逻辑
+## 3. 用 Thunk异步中间件 编写异步逻辑
   thunk 是一种特定类型的 Redux 函数，可以包含异步逻辑。
 
     ```js
