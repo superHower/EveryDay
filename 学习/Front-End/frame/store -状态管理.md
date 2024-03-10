@@ -130,5 +130,71 @@ Redux 改变数据的流程
   useDispatch   [修改store的数据], 同步方法
 
 
+# Zustand
+## 1. 创建仓库
+  返回 状态 与 方法
+## 2. 异步支持
+  直接在函数中编写异步逻辑，
+  最后把接口的数据放到set函数中返回即可
+## 3. 切片模式
+  类似于[模块化]
+  场景：当我们单个store比较大的时候，
+  可以采用一种`切片模式`进行模块拆分再组合
 
+```javascript
+import { create } from 'zustand'
+
+// 创建channel相关切片
+const createChannelStore = (set) => {
+  return {
+    count: 0, // 状态
+    inc: () => { // 修改状态的方法
+      set(state => ({ count: state.count + 1 }))
+    }，
+    channelList: [], 
+    fetchChannelList: async () => { // 异步逻辑
+      const res = await fetch(URL)
+      const jsonData = await res.json()
+      set({channelList: jsonData.data.channels})
+    }
+  }
+}
+// 创建counter相关切片
+const createCounterStore = (set) => {
+  return {
+    count: 0,
+    setCount: () => {
+      set(state => ({ count: state.count + 1 }))
+    }
+  }
+}
+// 组合切片
+const useStore = create((...a) => ({
+  ...createCounterStore(...a),
+  ...createChannelStore(...a)
+}))
+
+export default useStore
+```
+app.js - 绑定组件
+```jsx
+import { useEffect } from 'react'
+import useChannelStore from './store/channelStore'
+
+function App() {
+  const {count, inc, channelList, fetchChannelList } = useStore()
+ 
+  useEffect(() => { // 进行异步操作
+    fetchChannelList()
+  }, [fetchChannelList])
+
+  return (
+    <ul>
+      {channelList.map((item) => (
+        <li key={item.id}>{item.name}</li>
+      ))}
+    </ul>
+  )
+}
+```
 
