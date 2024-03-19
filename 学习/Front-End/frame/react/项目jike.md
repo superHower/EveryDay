@@ -1,7 +1,7 @@
 
 # 0. 基础配置
 ## 0.0 快速搭建开发环境
-- npx create-react-app react-jike
+- npx create-react-app react-jike (如果是ts项目 --template typescript)
 - yarn start
 ## 0.1 安装
 sass[预编译器]
