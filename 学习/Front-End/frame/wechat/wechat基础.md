@@ -292,4 +292,144 @@ Component({
   }
 ```
 
+
+
 # 9. 开放能力
+## 1. 获取微信头像
+1. open-type="chooseAvatar"
+2. bindchooseavatar="getAvatar"
+
+```js
+<view class="avatar">
+  <button open-type="chooseAvatar" bindchooseavatar="getAvatar">
+    <image src="{{ avatarUrl }}" mode="" />
+  </button>
+</view>
+____________________________________________________________
+Page({
+  /* 页面的初始数据 */
+  data: {
+    avatarUrl: '/assets/tom.png'
+  },
+  
+  getAvatar(e) {// 获取用户头像信息
+    const { avatarUrl } = e.detail// 获取选中的头像
+
+    this.setData({// 将获取到的头像赋值给 data 中变量同步给页面结构
+      avatarUrl
+    })
+  }
+ 
+  // coding...
+})
+```
+
+## 2. 获取用户昵称
+1. bindsubmit="onSubmit" 
+2. form-type="submit"
+```js
+<form bindsubmit="onSubmit">
+
+  <input type="nickname" name="nickname" placeholder="请输入昵称" />
+  <button type="primary" plain form-type="submit">点击获取昵称</button>
+</form>
+______________________________________________________
+Page({
+  // 获取微信昵称
+  onSubmit (event) {
+
+    const { nickname } = event.detail.value
+    console.log(nickname)
+  }
+
+}
+```
+
+## 3. 转发功能 -> open-type=“share“
+1.  js 文件 必须声明 onShareAppMessage 事件监听函数，并自定义转发内容。
+2.  open-type=“share“
+```js
+
+<button open-type="share">转发</button>
+______________________________________________________
+Page({
+
+  // 监听页面按钮的转发 以及 右上角的转发按钮
+  onShareAppMessage (obj) {
+
+    // 自定义转发内容
+    return {
+      title: '这是一个非常神奇的页面~~~',
+      // 转发路径
+      path: '/pages/cate/cate',
+      // 自定义图片路径，可以是本地文件路径、代码包文件路径或者网络图片路径
+      imageUrl: '../../assets/Jerry.png'
+    }
+  }
+})
+```
+
+
+## 4. 分享到朋友圈
+1. 页面 js 文件声明 onShareAppMessage 事件监听函数
+2. 页面 js 文件声明 onShareTimeline 事件监听函数
+
+
+
+
+```js
+<img src="http://8.131.91.46:6677/mina/base/帮我砍一刀.jpg" style="zoom:50%; border: 1px solid #ccc" />
+________________________________________________________________________
+Page({
+  // 监听右上角 分享到朋友圈 按钮
+  onShareTimeline () {    // 自定义分享内容。
+    return {
+      // 自定义标题，即朋友圈列表页上显示的标题
+      title: '帮我砍一刀~~~',
+      // 自定义页面路径中携带的参数，如 path?a=1&b=2 的 【 “?” 后面部分 】
+      query: 'id=1',
+      // 自定义图片路径，可以是本地文件或者网络图片
+      imageUrl: '../../assets/Jerry.png'
+    }
+  }
+})
+```
+
+
+## 5. 手机号验证组件
+1. 手机号快速验证组件：**平台会对号码进行验证，但不保证是实时验证**
+   ```html
+   <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+   ```
+
+2. 手机号实时验证组件：**在每次请求时，平台均会对用户选择的手机号进行实时验证**
+   ```html
+   <button open-type="getRealtimePhoneNumber" bindgetrealtimephonenumber="getrealtimephonenumber"/>
+   ```
+```js
+Page({
+
+  // 手机号快速验证
+  getphonenumber (event) {
+    // 通过事件对象，可以看到，在 event.detail 中可以获取到 code
+    // code 动态令牌，可以使用 code 换取用户的手机号
+    // 需要将 code 发送给后端，后端在接收到 code 以后
+    // 也需要调用 API，换取用户的真正手机号
+    // 在换取成功以后 ，会将手机号返回给前端
+    console.log(event)
+  },
+
+  // 手机号实时验证
+  getrealtimephonenumber (event) {
+    console.log(event)
+  }
+
+})
+```
+
+
+
+
+
+
+

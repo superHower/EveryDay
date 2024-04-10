@@ -236,38 +236,40 @@ function deepClone(obj, hash = new WeakMap()) {
 
 
 # 11 Promise
-  ## 11.1 promise介绍
-    1.  promise是一个对象，从它可以获取异步操作的消息；获取成功的结果  then ，获取失败的结果  catch 指定reject的回调
-    2. 自身有all, reject, resolve, race
-  ## 11.2. promise原理
-        1. let p = new Promise((resolve, reject) => {
-            //做一些异步操作
-            setTimeout(() => {
-              console.log('执行完成');
-              resolve('我是成功！！');
-              }, 2000);
-           });
-            【注】 resolve和reject是改变promise的参数
-        2. .then()方法， 指定状态改变时的操作， 
-            第一个回调函数 处理fulfilled状态时 的结果
-            第二个回调函数 处理rejected状态时 的原因
-        3. all方法提供了并行执行多个异步操作的能力，并且在所有异步操作执行完后才执行回调。
+## 11.1 promise介绍
+  1. promise是一个对象，从它可以获取异步操作的消息；获取成功的结果  then ，获取失败的结果  catch 指定reject的回调
+  2. Promise 构造函数: [reject](返回已拒绝), [resolve](返回已解决),
+  3. Promise 静态方法: all, race
+## 11.2. promise原理
+```js
+   let p = new Promise((resolve, reject) => {
+      //做一些异步操作
+      setTimeout(() => {
+        console.log('执行完成');
+        resolve('我是成功！！');
+        }, 2000);
+     });
+    【注】 resolve和reject是改变promise的参数
+```
+  2. .then()方法， 指定状态改变时的操作， 
+      [第一个]回调函数 处理fulfilled状态时 的结果
+      [第二个]回调函数 处理rejected状态时 的原因
+  3. all方法提供了并行执行多个异步操作的能力，并且在所有异步操作执行完后才执行回调。
     
-  ## 11.3. promise缺点： 
+## 11.3. promise缺点： 
         1. 一旦处于 fulfilled 或者 rejected 状态，状态就会凝固， 不可取消
         2. 无法直接获取进展
         3. 如果异步任务较多，同时他们之间有依赖关系
             就只能用回调函数处理，容易形成链式调用嵌套
             代码可读性差， 可维护性差
 
-  ## 11.4. promise状态
-        三种状态
-            pending: 等待状态
-            fulfilled: 成功
-            rejecteed: 失败
-        状态变化：
-            pending -> fulfilled;
-            pending -> rejected
+## 11.4. promise状态
+三种状态: [pending:等待状态];  [fulfilled:成功];  [rejecteed:失败]
+状态变化：
+  1. pending -> fulfilled;
+  2. pending -> rejected
+
+
 # 12 async/await
   ## 1.  async 、await 与 promise
     共同点： 都是处理【异步请求】的方式
