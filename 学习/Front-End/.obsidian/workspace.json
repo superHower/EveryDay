@@ -1,0 +1,164 @@
+{
+  "main": {
+    "id": "86b6fab4ea55f391",
+    "type": "split",
+    "children": [
+      {
+        "id": "0096a0d6987db12a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4eecb285f622626e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3.核心/js/1. 语言基础.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ddb8fb424518409f",
+    "type": "split",
+    "children": [
+      {
+        "id": "8c02b6989c881214",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5079e8fabbb519b7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ad2177bcf5b6ff2a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "原型",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0af101cd61defd35",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "f8ade5401f2e59fa",
+    "type": "split",
+    "children": [
+      {
+        "id": "79cde9cd79f7e024",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c61b5b451994b2de",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "3.核心/js/1. 语言基础.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8e8c1ff602117852",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "3.核心/js/1. 语言基础.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ec09689eac8e84e2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "93505582ca51da9e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "3.核心/js/1. 语言基础.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "4eecb285f622626e",
+  "lastOpenFiles": [
+    "3.核心/css/3-css动画.md",
+    "3.核心/css/0-css实现.md",
+    "3.核心/css/4-sass基础.md",
+    "3.核心/css/2-css布局.md",
+    "3.核心/css/1-css基础.md",
+    "3.核心/js/4. 原型链与继承.md",
+    "Prototype.md",
+    "1.浏览器/2.cookie-存储.md",
+    "1.浏览器/4.兼容.md",
+    "1.浏览器/3.跨域-安全.md",
+    "1.浏览器/1.进程渲染事件.md"
+  ]
+}
